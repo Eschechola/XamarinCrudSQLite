@@ -1,4 +1,4 @@
-<h2>CRUD Xamarin + SQLite + Funcionalidades<h2> <br><br><br><br>
+<h2>CRUD Xamarin + SQLite + Funcionalidades</h2> <br><br><br><br>
   
   <p> &nbsp;&nbsp;&nbsp;Projeto para fim acadêmico, um CRUD em Xamarin juntamente com a base de dados local SQLite.<br>
       <strong>Funciona da seguinte forma:</strong><br>
