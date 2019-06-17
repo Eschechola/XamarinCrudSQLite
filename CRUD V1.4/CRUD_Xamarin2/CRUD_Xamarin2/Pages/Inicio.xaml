@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_Xamarin2.Inicio">
+    <ContentPage.Content>
+
+        <AbsoluteLayout BackgroundColor="#2E2E2E">
+            <StackLayout BackgroundColor="#2E2E2E" 
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.1">
+                <Image Source="logo.png" WidthRequest="400" HeightRequest="350" />
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.9" WidthRequest="330">
+                <Button Text="Login"
+                        BackgroundColor="#de0502"
+                        TextColor="White"
+                        HeightRequest="40"
+                        Padding="0"
+                        BorderRadius="3"
+                        WidthRequest="280"
+                        Clicked="Login_Click"
+                        />
+                
+                <Button Text="Cadastrar"
+                        Margin="0,20,0,0"
+                        BackgroundColor="#de0502"
+                        TextColor="White"
+                        HeightRequest="40"
+                        BorderRadius="3"
+                        WidthRequest="280"
+                        Padding="0"
+                        Clicked="Cadastro_Click"
+                        />
+
+                <Button Text="Usar Conta Salva"
+                        Clicked="entrarComSenhaSalva"
+                        x:Name="btn_salvo"
+                        Margin="0,20,0,0"
+                        BackgroundColor="#de0502"
+                        TextColor="White"
+                        HeightRequest="40"
+                        BorderRadius="3"
+                        WidthRequest="280"
+                        Padding="0"
+                        IsEnabled="False"
+                        IsVisible="False"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

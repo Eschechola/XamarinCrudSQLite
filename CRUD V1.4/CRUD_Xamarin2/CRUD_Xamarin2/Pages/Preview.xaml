@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_Xamarin2.Preview">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#2E2E2E">
+            <StackLayout BackgroundColor="#2E2E2E" 
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.3">
+                <Image Source="logo.png" WidthRequest="400" HeightRequest="350" />
+
+                <Label Text="MyFilm" 
+                       TextColor="White" 
+                       Margin="0,10,0,0"
+                       HorizontalOptions="Center"
+                       FontSize="40"
+                       />
+            </StackLayout>
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

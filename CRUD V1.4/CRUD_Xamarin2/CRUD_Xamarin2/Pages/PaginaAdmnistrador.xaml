@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_Xamarin2.Pages.PaginaAdmnistrador">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#2E2E2E"
+                     x:Name="stk1">
+            <StackLayout
+                BackgroundColor="#1f1a21"
+                HeightRequest="70">
+                
+                <Label Text="Usuarios Cadastrados"
+                       FontSize="20"
+                       TextColor="#E6E8FA"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <ListView
+                Margin="0,-10,0,0"
+                IsPullToRefreshEnabled="True"
+                Refreshing="atualizarUsuarios"
+                HasUnevenRows="True"
+                x:Name="listaTodosUsuarios"
+                SeparatorColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                HeightRequest="100"
+                                BackgroundColor="#2E2E2E">
+                                <StackLayout VerticalOptions="CenterAndExpand" Margin="10,0,0,0">
+                                    <Label Text="{Binding Cpf}" FontSize="18" TextColor="White"/>
+                                    <Label Text="{Binding Nome}" FontSize="18" TextColor="White"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="alterarDadosUsuario"  CommandParameter="{Binding .}" IsDestructive="True" Text="Alterar"/>
+                                <MenuItem Clicked="excluirDadosUsuario" CommandParameter="{Binding .}" IsDestructive="True" Text="Excluir"/>
+                                <MenuItem Clicked="tornarUsuarioAdmninstrador" CommandParameter="{Binding .}" IsDestructive="True" Text="Tornar/Remover Admin"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout
+                HeightRequest="65"
+                BackgroundColor="#1f1a21"
+                VerticalOptions="End"
+                Orientation="Horizontal">
+
+                <StackLayout 
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+                    <ImageButton
+                        Padding="20"
+                        WidthRequest="85"
+                        BackgroundColor="Transparent"
+                        Source="DELETE.png"
+                        Clicked="abrirDeletarUsuario"/>
+                
+                    <ImageButton
+                        Padding="20"
+                        WidthRequest="85"
+                        BackgroundColor="Transparent"
+                        Source="add.png"
+                        Clicked="adicionarUsuario"/>
+
+                    <ImageButton
+                        Padding="20"
+                        WidthRequest="85"
+                        BackgroundColor="Transparent"
+                        Source="CHANGE.png"
+                        Clicked="alterarUsuario"/>
+
+                    <ImageButton
+                        Padding="18"
+                        WidthRequest="85"
+                        BackgroundColor="Transparent"
+                        Source="admin.png"
+                        Clicked="adicionarOuRemoverAdmin"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

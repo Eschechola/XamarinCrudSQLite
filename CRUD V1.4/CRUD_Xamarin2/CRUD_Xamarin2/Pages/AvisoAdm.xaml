@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages ="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="CRUD_Xamarin2.AvisoAdm">
+
+    <StackLayout HeightRequest="350"
+                 Padding="24"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 BackgroundColor="#2E2E2E"
+                 x:Name="stk1">
+
+        <Label
+            Text="Você está utilizando uma conta com privilegios de admnistrador!"
+            TextColor="White"
+            FontSize="20"
+            FontAttributes="Bold"
+            HorizontalOptions="CenterAndExpand"
+            x:Name="lbl1"/>
+        
+        <Label
+            Text="Para gerenciar o aplicativo vá até a aba configurações!"
+            TextColor="White"
+            FontSize="20"
+            HorizontalOptions="CenterAndExpand"
+            Margin="0,30,0,0"
+            x:Name="lbl2"/>
+
+        <Image 
+            Source="settings.png"
+            WidthRequest="60"
+            HeightRequest="60"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Center"
+            Margin="0,40,0,0"/>
+
+        <StackLayout Orientation="Horizontal" HeightRequest="50" Margin="0,60,0,0">
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Clicked="voltarExibir"
+                    Padding="0"
+                    HeightRequest="40"
+                    TextColor="White"
+                    BackgroundColor="#de0502"
+                    BorderRadius="3"
+                    WidthRequest="150"
+                    Text="Entendi"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    x:Name="btn1"/>
+
+                <Button
+                    Clicked="abrirConfirguracoes"
+                    Padding="0"
+                    HeightRequest="40"
+                    TextColor="White"
+                    BackgroundColor="#de0502"
+                    BorderRadius="3"
+                    WidthRequest="150"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Ver privilegios"
+                    x:Name="btn2"/>
+            </Grid>
+            
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>

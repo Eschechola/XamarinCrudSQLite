@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
+             x:Class="CRUD_Xamarin2.Esq_Senha">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#2E2E2E">
+            <StackLayout BackgroundColor="#2E2E2E" 
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.1">
+                <Image Source="logo.png" WidthRequest="200" HeightRequest="150" />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="#2E2E2E"
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.85"
+                         Margin="0,-20,0,0"
+                         WidthRequest="340">
+
+                <Entry Placeholder="CPF"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       Keyboard="Numeric"
+                       HeightRequest="55"
+                       MaxLength="14"
+                       x:Name="cpf"
+                       >
+                    <Entry.Behaviors>
+                        <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <StackLayout HorizontalOptions="Center">
+                    <Button
+                        WidthRequest="170"
+                        BackgroundColor="#de0502"
+                        TextColor="White"
+                        BorderRadius="3"
+                        Text="Verificar"
+                        HeightRequest="40"
+                        Padding="0"
+                        Margin="0,20,0,0"
+                        Clicked="validaCPF"/>
+                </StackLayout>
+
+                <StackLayout 
+                    x:Name="alterarSenhas"
+                    WidthRequest="350"
+                    Margin="0,40,0,0"
+                    Opacity="1">
+
+                    <Entry Placeholder="Senha"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       HeightRequest="55"
+                       MaxLength="30"
+                       IsPassword="True"
+                       x:Name="senha"/>
+
+
+                    <Entry Placeholder="Confirmar senha"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       HeightRequest="55"
+                       MaxLength="30"
+                       x:Name="c_senha"
+                       Margin="0,10,0,0"
+                       IsPassword="True"/>
+
+                    <Button
+                        BackgroundColor="#007e94"
+                        TextColor="White"
+                        BorderRadius="3"
+                        Text="Alterar senha"
+                        HeightRequest="40"
+                        Padding="0"
+                        Margin="0,50,0,0"
+                        Clicked="atualizarUsuario"
+                        />
+
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

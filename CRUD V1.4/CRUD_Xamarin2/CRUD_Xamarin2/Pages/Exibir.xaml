@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_Xamarin2.Exibir">
+
+    <AbsoluteLayout BackgroundColor="#2E2E2E" x:Name="abs_fundo1">
+        <StackLayout
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            Orientation="Vertical"
+            WidthRequest="400"
+            BackgroundColor="#2E2E2E"
+            x:Name="stk_fundo1">
+
+            <SearchBar BackgroundColor="White"
+                       CancelButtonColor="Black"
+                       FontSize="19"
+                       Placeholder="Pesquisar..."
+                       HorizontalOptions="FillAndExpand"
+                       TextChanged="pesquisarFilme"
+                       x:Name="searchBar"
+                       />
+        </StackLayout>
+
+        <StackLayout
+            x:Name="stk_fundo2"
+            Margin="0,50,0,100">
+            <ScrollView>
+                <ListView
+                    x:Name="listaExibir"
+                    BackgroundColor="#2E2E2E"
+                    HasUnevenRows="True"
+                    SeparatorColor="Black"
+                    IsPullToRefreshEnabled="True"
+                    Refreshing="atualizarPaginaXAML"
+                    >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell x:Name="viewExibir">
+                                <StackLayout
+                                    HeightRequest="200"
+                                    x:Name="stk_fundo3"
+                                    BackgroundColor="#2E2E2E">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="90" />
+                                            <RowDefinition Height="90" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="2*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image
+                                            Source="{Binding Imagem}"
+                                            Grid.Row="0"
+                                            Margin="10,0,0,0"
+                                            Grid.Column="0"
+                                            Grid.RowSpan="3"/>
+
+                                        <Label Text="{Binding Nome}"
+                                               FontAttributes="Bold"
+                                               Grid.Column="1"
+                                               Grid.Row="0"
+                                               TextColor="White"
+                                               FontSize="20"
+                                               Margin="10,20,0,0"/>
+
+                                        <Label Text="{Binding Ano}"
+                                               Grid.Column="1"
+                                               Grid.Row="1"
+                                               TextColor="White"
+                                               FontSize="18"
+                                               Margin="10,-20,0,0"
+                                               x:Name="anoFilme"
+                                               />
+
+                                        <Label Text="{Binding Genero}"
+                                               Grid.Column="1"
+                                               Grid.Row="2"
+                                               TextColor="White"
+                                               FontSize="18"
+                                               Margin="10,-60,0,0"
+                                               />
+                                    </Grid>
+                                </StackLayout>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="iconeAlterarBanco"  CommandParameter="{Binding .}" IsDestructive="True" Text="Alterar"/>
+                                    <MenuItem Clicked="iconeDeletarBanco" CommandParameter="{Binding .}" IsDestructive="True" Text="Excluir"/>
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+
+
+
+        <StackLayout
+                AbsoluteLayout.LayoutFlags="XProportional, YProportional, WidthProportional, HeightProportional"
+                AbsoluteLayout.LayoutBounds="0,1,1,.1"
+                Orientation="Vertical" 
+                BackgroundColor="#1f1a21"
+                x:Name="stk_fundo3">
+
+            <StackLayout Orientation="Horizontal">
+                <Frame
+                    BorderColor="#302941"
+                    Padding="0"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#1f1a21"
+                    Margin="5,0,0,0"
+                    
+                    >
+                    <ImageButton
+                        x:Name="btn1"
+                        Source="DELETE.png"
+                        BackgroundColor="#1f1a21"
+                        Padding="20"
+                        Clicked="deletarFilme"
+                    />
+                </Frame>
+
+                <Frame
+                    BorderColor="#302941"
+                    Padding="0"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#1f1a21"
+                    Margin="-5,0,0,0"
+                    
+                    >
+                    <ImageButton
+                        x:Name="btn2"
+                        Source="CHANGE.png"
+                        BackgroundColor="#1f1a21"
+                        Padding="20"
+                        Clicked="alterarFilme"/>
+                </Frame>
+
+                <Frame
+                    BorderColor="#302941"
+                    Padding="0"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#1f1a21"
+                    Margin="-5,0,0,0"
+                    
+                    >
+                    <ImageButton
+                        x:Name="btn3"
+                        Source="add.png"
+                        BackgroundColor="#1f1a21"
+                        Padding="20"
+                        Clicked="adicionarFilme"/>
+                </Frame>
+
+                <Frame
+                    BorderColor="#302941"
+                    Padding="0"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#1f1a21"
+                    Margin="-5,0,0,0"
+                    
+                    >
+                    <ImageButton
+                        x:Name="btn4"
+                        Source="ordenarabc.png"
+                        BackgroundColor="#1f1a21"
+                        Padding="20"
+                        Clicked="mostrarOpcoes"/>
+                </Frame>
+
+                <Frame
+                    BorderColor="#302941"
+                    Padding="0"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#1f1a21"
+                    Margin="-5,0,0,0"
+                    >
+                    <ImageButton
+                        x:Name="btn5"
+                        Source="settings.png"
+                        BackgroundColor="#1f1a21"
+                        Padding="20"
+                        Clicked="abrirConfirguracoes"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

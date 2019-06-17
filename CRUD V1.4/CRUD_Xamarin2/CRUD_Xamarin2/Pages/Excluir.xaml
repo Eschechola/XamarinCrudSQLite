@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages ="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="CRUD_Xamarin2.Excluir">
+
+    <StackLayout HeightRequest="200"
+                 Padding="24"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 BackgroundColor="#2E2E2E"
+                 x:Name="stk_1">
+
+        <Entry
+            Margin="0,20,0,0"
+            Placeholder="Nome"
+            TextColor="White"
+            PlaceholderColor="#7B8D93"
+            HeightRequest="55"
+            x:Name="lbl_deletar"
+            />
+
+
+        <Button
+            Margin="0,80,0,0"
+            Padding="0"
+            HeightRequest="40"
+            TextColor="White"
+            BackgroundColor="#de0502"
+            x:Name="btn_1"
+            BorderRadius="3"
+            WidthRequest="150"
+            Text="Excluir"
+            Clicked="excluirFilme"/>
+
+    </StackLayout>
+</pages:PopupPage>

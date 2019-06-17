@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_Xamarin2.Cadastro"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#2E2E2E">
+            <StackLayout BackgroundColor="#2E2E2E" 
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.1">
+                <Image Source="logo.png" WidthRequest="200" HeightRequest="150" />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="#2E2E2E" 
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.6"
+                         WidthRequest="340"
+                         >
+
+                <Entry Placeholder="CPF"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       Keyboard="Numeric"
+                       HeightRequest="55"
+                       Margin="0,10,0,0"
+                       MaxLength="14"
+                       x:Name="lbl_cpf">
+                    <Entry.Behaviors>
+                        <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry Placeholder="E - Mail"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       HeightRequest="55"
+                       Margin="0,10,0,0"
+                       x:Name="lbl_nome"/>
+
+                <Entry Placeholder="Senha"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       HeightRequest="55"
+                       Margin="0,10,0,0"
+                       IsPassword="True"
+                       x:Name="lbl_senha"/>
+
+                <Entry Placeholder="Confirmar Senha"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       HeightRequest="55"
+                       Margin="0,10,0,0"
+                       IsPassword="True"
+                       x:Name="lbl_senha_confirmar"
+                       />
+            </StackLayout>
+
+            <StackLayout
+                BackgroundColor="#2E2E2E" 
+                AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                AbsoluteLayout.LayoutBounds=".5,.9"
+                WidthRequest="360"
+                Orientation="Horizontal">
+
+                <Button
+                    WidthRequest="160"
+                    Margin="10,0,0,0"
+                    BackgroundColor="#de0502"
+                    TextColor="White"
+                    BorderRadius="3"
+                    Text="Cancelar"
+                    HeightRequest="40"
+                    Padding="0"
+                    Clicked="voltarPagina"/>
+                
+                <Button
+                    WidthRequest="160"
+                    Margin="10,0,0,0"
+                    TextColor="White"
+                    BackgroundColor="#de0502"
+                    BorderRadius="3"
+                    Text="Cadastrar"
+                    HeightRequest="40"
+                    Padding="0"
+                    Clicked="cadastrar"
+                    />
+
+            </StackLayout>
+            
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages ="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="CRUD_Xamarin2.AdicionarFilme">
+
+    <StackLayout HeightRequest="500"
+                 Padding="24"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="FillAndExpand"
+                 BackgroundColor="#2E2E2E"
+                 x:Name="stk1">
+
+        <ImageButton
+            Source="photo.png"
+            BackgroundColor="Transparent"
+            x:Name="imgSelecionada"
+            Clicked="importarImagem"
+            Margin="0,15,0,0"/>
+
+        <Entry
+            Margin="0,20,0,0"
+            Placeholder="Nome"
+            TextColor="White"
+            PlaceholderColor="#7B8D93"
+            HeightRequest="55"
+            x:Name="lbl_nome"
+            />
+
+        <Entry
+            Margin="0,20,0,0"
+            Placeholder="Ano"
+            MaxLength="4"
+            Keyboard="Numeric"
+            TextColor="White"
+            PlaceholderColor="#7B8D93"
+            HeightRequest="55"
+            x:Name="lbl_ano"/>
+
+        <Entry
+            Margin="0,20,0,0"
+            Placeholder="Genero"
+            TextColor="White"
+            PlaceholderColor="#7B8D93"
+            HeightRequest="55"
+            x:Name="lbl_genero"/>
+
+        <Button
+            Margin="0,80,0,0"
+            Padding="0"
+            HeightRequest="40"
+            TextColor="White"
+            BackgroundColor="#de0502"
+            BorderRadius="3"
+            WidthRequest="150"
+            Text="Salvar"
+            x:Name="btn1"
+            Clicked="cadastrarFilme"/>
+
+    </StackLayout>
+</pages:PopupPage>

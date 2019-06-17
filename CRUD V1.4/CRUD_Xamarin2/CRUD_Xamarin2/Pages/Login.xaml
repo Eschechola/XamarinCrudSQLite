@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
+             xmlns:local="clr-namespace:Sample.InputKit"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="CRUD_Xamarin2.Login">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#2E2E2E">
+            <StackLayout BackgroundColor="#2E2E2E" 
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.15">
+                <Image Source="logo.png" WidthRequest="300" HeightRequest="250" />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="#2E2E2E"
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.55"
+                         Margin="0,-20,0,0"
+                         WidthRequest="340">
+
+                    <Entry Placeholder="CPF"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       Keyboard="Numeric"
+                       HeightRequest="55"
+                       MaxLength="14"
+                       x:Name="lbl_cpf">
+                        <Entry.Behaviors>
+                            <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                       </Entry.Behaviors>
+                    </Entry>
+
+            </StackLayout>
+
+            <StackLayout BackgroundColor="#2E2E2E"
+                         AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.72"
+                         WidthRequest="340"
+                         Margin="0,70,0,0">
+
+                <Entry Placeholder="Senha"
+                       TextColor="White"
+                       PlaceholderColor="#7B8D93"
+                       HeightRequest="55"
+                       IsPassword="True"
+                       x:Name="lbl_senha"/>
+
+                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Text="Perdeu sua senha?" 
+                           TextColor="#7B8D93"
+                           FontSize="19"
+                           Margin="5,5,0,0"/>
+
+                    <Button Text="Recuperar"
+                            TextColor="White"
+                            BackgroundColor="#de0502"
+                            Padding="0"
+                            HeightRequest="40"
+                            Margin="20,0,0,0"
+                            BorderRadius="3"
+                            WidthRequest="150"
+                            Clicked="Esqueci_Click"/>
+                </StackLayout>
+
+                <StackLayout
+                    Padding="0"
+                    Margin="8,0,0,0">
+
+                    <input:CheckBox 
+                            Text="Lembrar senha."
+                            TextColor="#7B8D93"
+                            TextFontSize="19"
+                            Color="#7B8D93"
+                            Type="Material"
+                            x:Name="senhaSalva"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout AbsoluteLayout.LayoutFlags="XProportional, YProportional"
+                         AbsoluteLayout.LayoutBounds=".5,.93"
+                         WidthRequest="315">
+                
+                <Button Text="Entrar"
+                        TextColor="White"
+                        BackgroundColor="#de0502"
+                        Padding="0"
+                        BorderRadius="3"
+                        HeightRequest="40"
+                        Clicked="EntrarList"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

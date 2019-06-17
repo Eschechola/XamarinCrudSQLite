@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD_Xamarin2.Pages.AlterarUsuario">
+    <ContentPage.Content>
+        <StackLayout
+            x:Name="stk1"
+            BackgroundColor="#2E2E2E">
+
+            <Image
+                Source="logo.png"
+                WidthRequest="200"
+                HeightRequest="200"
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="Transparent"/>
+
+            <Entry
+                Margin="0,40,0,0"
+                Placeholder="CPF"
+                PlaceholderColor="White"
+                TextColor="White"
+                x:Name="lbl_CPF"
+                IsEnabled="false"
+                WidthRequest="350"
+                HorizontalOptions="CenterAndExpand"/>
+
+            <Entry
+                Margin="0,20,0,0"
+                TextColor="White"
+                x:Name="lbl_mail"
+                WidthRequest="350"
+                HorizontalOptions="CenterAndExpand"
+                Placeholder="E - Mail"
+                PlaceholderColor="DimGray"/>
+
+            <Entry
+                Margin="0,20,0,0"
+                TextColor="White"
+                x:Name="lbl_senha"
+                WidthRequest="350"
+                HorizontalOptions="CenterAndExpand"
+                Placeholder="Senha"
+                IsPassword="True"
+                PlaceholderColor="DimGray"/>
+
+            <Entry
+                Margin="0,20,0,0"
+                TextColor="White"
+                x:Name="lbl_csenha"
+                WidthRequest="350"
+                HorizontalOptions="CenterAndExpand"
+                Placeholder="Confirmar Senha"
+                IsPassword="True"
+                PlaceholderColor="DimGray"/>
+
+            <Button
+                Margin="0,50,0,0"
+                TextColor="White"
+                Text="Salvar Dados"
+                BackgroundColor="#007e94"
+                HorizontalOptions="CenterAndExpand"
+                Padding="0"
+                HeightRequest="40"
+                WidthRequest="350"
+                x:Name="btn1"
+                Clicked="AlterarDadosUsuario"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
