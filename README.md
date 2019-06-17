@@ -11,6 +11,10 @@
 <p>&nbsp;&nbsp;&nbsp; O admnistrador tem as mesmas permissões que os usuários comuns, porém ele pode ver todos os usuários cadastrados, deletar usuários, adicionar usuários, alterar os dados e também pode tornar um usuário admnistrador</p>
 
 
+<br>
+<br><br>
+
+
 <strong>FUNCIONALIDADES EXTRAS</strong>
 
 <ul>
@@ -19,6 +23,10 @@
   <li> Validação de CPF - Funcionalidades/CPF.cs </li>
 
 </ul>
+
+<br>
+<br><br><br>
+<br><br>
 
 <footer>
 
