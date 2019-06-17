@@ -2,8 +2,8 @@
   
   <p> &nbsp;&nbsp;&nbsp;Projeto para fim acadêmico, um CRUD em Xamarin juntamente com a base de dados local SQLite.<br>
       <strong>Funciona da seguinte forma:</strong><br>
-      <p> &nbsp;&nbsp;&nbsp;O usuario pode se cadastrar ou logar, após o cadastro ou o login serem feitos<br>
-          o usuário pode cadastrar títulos de filmes com Nome, Ano, e Gênero, cada usuário pode ver apenas os seus filmes<br>                       cadastrados, alterar os filmes, deletar os filmes, pesquisar os filmes e também adicionar os filmes, ele também tem a permissao de alterar seus dados.</p>
+      <p> &nbsp;&nbsp;&nbsp;O usuario pode se cadastrar ou logar, após o cadastro ou o login serem feitos
+          o usuário pode cadastrar títulos de filmes com Nome, Ano, e Gênero, cada usuário pode ver apenas os seus filmes                      cadastrados, alterar os filmes, deletar os filmes, pesquisar os filmes e também adicionar os filmes, ele também tem a permissao de alterar seus dados.</p>
           
 <br>
 <br><br>
